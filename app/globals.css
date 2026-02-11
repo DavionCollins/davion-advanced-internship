@@ -55,6 +55,10 @@ button:disabled {
   width: 100%;
 }
 
+.wrapper {
+  position: relative;
+}
+
 .btn {
   background-color: #2bd97c;
   color: #032b41;
@@ -450,6 +454,148 @@ button:disabled {
   color: #032b41;
   font-weight: 500;
 }
+
+
+/* 
+
+Modal
+
+
+*/
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #242424;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+}
+.modal, .modal--wrapper {
+  z-index: 9999;
+  width: 100%;
+}
+
+.modal--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 486px;
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 35px 40px;
+  width: 100%;
+}
+
+
+
+.modal__btns {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal__login-btn {
+  background-color: #0365f2;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 20px;
+  transition: background-color 200ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  position: relative;
+}
+
+
+
+.btn__mask {
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+left: 0;
+margin-left: 5px;
+padding: 8px;
+}
+
+.btn__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google__login {
+  background-color: #04429e;
+}
+
+.btn__mask--google {
+  background-color: #fff;
+border-radius: 8px;
+}
+
+.modal__login-btn:hover {
+  opacity: 0.9;
+  transition: all 300ms;
+}
+
+.modal__login--form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+.login__email, .login__password {
+  height: 30px;
+  padding: 5px;
+  font-size: 18px;
+}
+
+.modal__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+.modal__register, .modal__forgot__password {
+  color: #116be9;
+  cursor: pointer;
+}
+
+.modal__register:hover, .modal__forgot__password:hover {
+  opacity: 0.8;
+}
+
 
 @media (max-width: 768px) {
   .landing__content {

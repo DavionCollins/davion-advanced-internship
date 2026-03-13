@@ -57,6 +57,9 @@ button:disabled {
 
 .wrapper {
   position: relative;
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
 .btn {
@@ -455,7 +458,6 @@ button:disabled {
   font-weight: 500;
 }
 
-
 /* 
 
 Modal
@@ -472,7 +474,8 @@ Modal
   top: 0;
   left: 0;
 }
-.modal, .modal--wrapper {
+.modal,
+.modal--wrapper {
   z-index: 9999;
   width: 100%;
 }
@@ -518,7 +521,6 @@ Modal
   margin-bottom: 12px;
 }
 
-
 .modal__btns {
   width: 100%;
   display: flex;
@@ -543,16 +545,14 @@ Modal
   position: relative;
 }
 
-
-
 .btn__mask {
-display: flex;
-align-items: center;
-justify-content: center;
-position: absolute;
-left: 0;
-margin-left: 10px;
-padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  margin-left: 10px;
+  padding: 4px;
 }
 
 .btn__icon {
@@ -567,8 +567,8 @@ padding: 4px;
 
 .btn__mask--google {
   background-color: #fff;
-border-radius: 8px;
-padding: 4px;
+  border-radius: 8px;
+  padding: 4px;
 }
 
 .auth__separator {
@@ -588,7 +588,7 @@ padding: 4px;
   gap: 20px;
 }
 
-.login__submit{
+.login__submit {
   margin-bottom: 12px;
   position: relative;
   font-size: 20px;
@@ -597,9 +597,8 @@ padding: 4px;
   justify-content: center;
 }
 
-
-
-.login__email, .login__password {
+.login__email,
+.login__password {
   height: 30px;
   padding: 5px;
   font-size: 18px;
@@ -613,12 +612,14 @@ padding: 4px;
   align-items: center;
 }
 
-.modal__register, .modal__forgot__password {
+.modal__register,
+.modal__forgot__password {
   color: #116be9;
   cursor: pointer;
 }
 
-.modal__register:hover, .modal__forgot__password:hover {
+.modal__register:hover,
+.modal__forgot__password:hover {
   opacity: 0.8;
 }
 
@@ -633,7 +634,7 @@ padding: 4px;
 .btn__loading--spinner {
   position: absolute;
   animation: loadingSpin 1s linear infinite;
-  right:45%;
+  right: 45%;
   top: 25%;
 }
 
@@ -644,6 +645,295 @@ padding: 4px;
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* 
+FOR YOU PAGE
+*/
+
+.search-bar__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  margin-right: 80px;
+}
+
+.search-bar__input {
+  position: relative;
+  width: 80%;
+  height: 40px;
+  border-radius: 4px;
+  border: solid 1px #394547;
+  margin: 20px 0;
+  padding-left: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #f1f6f4;
+}
+
+.search-bar__icon {
+  position: absolute;
+  right: 170;
+  top: 30;
+  font-size: 20px;
+}
+
+.search-bar__icon:hover {
+  color: #0365f2;
+  transition: all 200ms;
+}
+
+.search-bar__separator {
+  width: 100%;
+  height: 1px;
+  background-color: #c1c9ca;
+  margin-right: 80px;
+}
+
+/* 
+
+Selected Book
+
+*/
+
+.book__wrapper {
+  width: 100%;
+}
+
+.book {
+  width: 100%;
+  max-width: 750px;
+}
+
+
+
+.book__description {
+  margin-top: 20px;
+  background-color: #fbefd6;
+  padding: 28px 40px 28px 28px;
+  position: relative;
+  display: flex;
+}
+
+.book__para {
+  font-size: 24px;
+  width: 50%;
+}
+.book__separator {
+  margin: 0 10px 0 10px;
+
+}
+
+
+.book__separator::after {
+  content: "";
+  width: 0.5px;
+  height: calc((100% - 20px));
+  background-color: #242424;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.book__details {
+  display: flex;
+  gap: 12px;
+  margin-left: 15px;
+}
+
+.book__img {
+  width: 100%;
+  height: 100%;
+  max-width: 150px;
+}
+
+.selected-book__title {
+  font-size: 16px;
+}
+
+.book__author {
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.book__playtime {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.playtime-icon {
+  font-size: 35px;
+}
+
+/* 
+Sidebar
+*/
+
+.side-bar {
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f7faf9;
+}
+
+.side-bar__content {
+  font-size: 18px;
+  height: 100vh;
+}
+
+.side-bar__title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.side-bar__top {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.side-bar__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.side-bar__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 120px;
+  font-size: 20px;
+}
+
+.side-bar__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 60px;
+}
+
+
+
+.side-bar__link:hover {
+  background-color: #d7e9ff;
+  transition: all 200ms;
+}
+
+.side-bar__link--line {
+  width: 10px;
+  height: 100%;
+}
+
+/* 
+
+Recommnended Books Page
+
+*/
+
+.book-section--title {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.book-section--subtitle {
+  font-size: 18px;
+  color: #394547;
+  margin-bottom: 24px;
+}
+
+.book__title {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.author {
+  font-size: 14px;
+  color: #394547;
+  margin-top:8px ;
+}
+
+.book__subtitle {
+  font-size: 14px;
+  color: #394547;
+  margin-top: 8px;
+}
+
+
+.books__wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+
+.books {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.books::-webkit-scrollbar {
+  display: none;
+}
+
+.books > * {
+  scroll-snap-align: start;
+  width: 200px;
+  flex: 0 0 auto;
+}
+
+.book {
+  position: relative;
+  padding: 20px;
+}
+
+.book__link {
+  display: flex;
+}
+
+.book__pill {
+  position: absolute;
+  top: 5px;
+  right: -15px;
+  font-size: 12px;
+  background-color: #032b41;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 10px;
+}
+
+.book__stats {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.book__runtime {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.book__rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 @media (max-width: 768px) {

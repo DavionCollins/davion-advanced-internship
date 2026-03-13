@@ -3,6 +3,7 @@ import Image from 'next/image'
 import landing from '../public/assets/landing.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { showModal } from '@/app/Features/Modal/ModalSlice';
+import Link from 'next/link';
 
 const Landing = () => {
   const user = useSelector((state) => state.auth.user);
@@ -24,11 +25,15 @@ const Landing = () => {
                 <br className="remove--tablet" />
                 and even people who don’t like to read.
               </div>
+              
               {user ? (
-                <button className="btn home__cta--btn" >Dashboard</button>
+                <Link href='ForYou'>
+                  <button className="btn home__cta--btn">Dashboard</button>
+                </Link>
               ) : (
                 <button className="btn home__cta--btn" onClick={() => dispatch(showModal())}>Login</button>
               )}
+              
             </div>
             <figure className="landing__image--mask">
               <Image src={landing} alt='landing'/>  

@@ -9,7 +9,6 @@ import Reviews from "@/Components/Reviews";
 export default function Home() {
   return (
     <div>
-      <Modal />
       <Navbar/>
       <Landing />
       <Features />

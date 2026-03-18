@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ReduxProvider } from "@/Components/ReduxProvider";
+import Modal from "@/Components/Modal";
+import AuthListener from "@/Components/AuthListener";
 
 
 const geistSans = Geist({
@@ -19,11 +21,16 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ReduxProvider>
+          <Modal />
+          <AuthListener>
         {children}
+        </AuthListener>
         </ReduxProvider>
       </body>
     </html>

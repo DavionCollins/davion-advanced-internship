@@ -13,6 +13,7 @@ const initialState = {
   user: null,
   loading: false,
   error: null,
+  subscribed: false
 };
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -99,9 +100,9 @@ export const resetPassword = createAsyncThunk(
   "auth.resetPassword",
   async ({ email }, { rejectWithValue }) => {
     try {
-      console.log('email is being sent to reset password function:', email);
+      console.log("email is being sent to reset password function:", email);
       await sendPasswordResetEmail(auth, email);
-      console.log('Password reset email sent successfully');
+      console.log("Password reset email sent successfully");
       return null;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -112,7 +113,11 @@ export const resetPassword = createAsyncThunk(
 const AuthSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    setUser: (state, action) => {
+      state.user = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(signUpUser.pending, (state) => {
@@ -187,5 +192,7 @@ const AuthSlice = createSlice({
       });
   },
 });
+
+export const {setUser} = AuthSlice.actions
 
 export default AuthSlice.reducer;

@@ -1100,6 +1100,157 @@ Inside Book
   line-height: 1.5;
 }
 
+/* 
+
+Player
+
+*/
+
+.player {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 28px;
+}
+
+.player__summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  padding: 24px;
+  margin: 0 auto;
+}
+
+
+
+.player__title {
+  display: flex;
+  font-size: 24px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #b2bbbf;
+  width: 100%;
+  justify-content: center;
+}
+
+.player__summary--text {
+  white-space: pre-line;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.4;
+  
+}
+
+.player__btns {
+  display: flex;
+  gap: 16px;
+  margin-right: 18px;
+}
+
+.player__btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.audio__player {
+  overflow-x: hidden;
+  display: flex;
+  width: calc(100% - 200px);
+  background-color: #042330;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  max-width: 1400px;
+}
+
+.book__audioPlayer {
+  display: flex;
+}
+
+
+
+.book__audioPlayer--text {
+margin-left: 20px;
+}
+
+.book__audioPlayer--text h2 {
+  color: #fff;
+}
+
+.book__audioPlayer--text p {
+  color: #9c9393;
+}
+
+.audioPlayer__time {
+  display: flex;
+  color: #fff;
+  gap: 18px;
+}
+
+.book__audio-player--img {
+  width: 60px;
+  height: 60px;
+}
+
+.player__btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.player__btn {
+  color: #fff;
+}
+
+.play-pause--btn {
+  background-color: #fff;
+  padding: 18px;
+  border-radius: 50%;
+}
+
+.progress-bar {
+  height: 4px;
+
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+
+  background: linear-gradient(
+    to right, 
+    #4caf50 0%, 
+    #4caf50 var(--progress, 0%),
+    #e0e0e0 var(--progress, 0%),
+    #e0e0e0 100%
+  );
+}
+
+.progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #9c9f9c;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+  transition: 0.15s ease;
+}
+
+
+
 @media (max-width: 768px) {
   .landing__content {
     display: flex;
